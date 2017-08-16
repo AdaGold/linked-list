@@ -13,7 +13,7 @@ Methods to implement in the singly linked list:
   - *find_nth_from_beginning*: method to return the value of the nth element from the beginning. n is the input to the method.
                              Assume indexing starts at 0 while counting to n.
   - *insert_ascending*: method to insert a new node with specific input data value, assuming the linked list is sorted in ascending order.
-  - *print*: method to print all the values in the linked list
+  - *visit*: method to print all the values in the linked list
   - *delete*: method to delete the first node found with the specified value taken as input.
   - *reverse*: method to reverse the singly linked list. The nodes should be moved and not just the values in the nodes.
 
