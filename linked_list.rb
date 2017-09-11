@@ -165,7 +165,7 @@ puts "Confirming min and max values in the linked list."
 min = my_linked_list.find_min
 puts "BUG: Min value should be 1 and not #{min}" if min != 1
 max = my_linked_list.find_max
-puts "BUG: Max value should be 5 and not #{max}" if max != 6
+puts "BUG: Max value should be 6 and not #{max}" if max != 6
 
 # delete value
 puts "Deleting node with value 5 from the linked list."
