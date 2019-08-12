@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require 'minitest/reporters'
 require 'minitest/skip_dsl'
 
-require_relative 'linked_list'
+require_relative 'test_helper'
 
 
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
