@@ -125,7 +125,7 @@ describe LinkedList do
             @list.add_last(100)
             @list.add_first(-12)
             expect(@list.find_max).must_equal 100
-            expect(@list.find_min).must_equal -12
+            expect(@list.find_min).must_equal(-12)
         end
     end
 
