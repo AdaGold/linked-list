@@ -51,6 +51,29 @@ describe LinkedList do
         end
     end
 
+    describe "search" do
+        it "can find an element" do
+            @list = LinkedList.new
+            @list.add_first(3)
+            @list.add_first(2)
+
+            expect(@list.search(3)).must_equal true
+
+            expect(@list.search(2)).must_equal true
+        end
+
+        it "returns false if the element is not in the list" do
+          @list = LinkedList.new
+          @list.add_first(3)
+          @list.add_first(2)
+          expect(@list.search("pasta")).must_equal false
+        end
+
+        it "returns false for an empty list" do
+          expect(@list.search(3)).must_equal false
+        end
+    end
+
     describe "length" do
         it "will return 0 for an empty list" do
             expect(@list.length).must_equal 0
