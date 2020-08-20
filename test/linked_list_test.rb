@@ -194,6 +194,23 @@ describe LinkedList do
             expect(@list.find_max).must_equal 9
             expect(@list.find_min).must_equal 3
         end
+
+        it "can delete from the middle" do
+            # Arrange
+            @list.add_last(9)
+            @list.add_last(10)
+            @list.add_first(4)
+            @list.add_first(3)
+            @list.add_first(2)
+
+            # Act
+            @delete(9)
+
+            # Assert
+            expect(@list.get_last).must_equal 10
+            expect(@list.length).must_equal 4
+            expect(@list.get_first).must_equal 2
+        end
     end
 
     describe "nth_from_the_end" do
