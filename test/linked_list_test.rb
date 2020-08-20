@@ -70,7 +70,7 @@ describe LinkedList do
         end
 
         it "returns false for an empty list" do
-          expect(@list.search(3)).must_equal false
+        expect(@list.search(3)).must_equal false
         end
     end
 
@@ -148,6 +148,10 @@ describe LinkedList do
             @list.add_last(100)
             @list.add_first(-12)
             expect(@list.find_max).must_equal 100
+            expect(@list.find_min).must_equal(-12)
+            @list.add_last(99)
+            expect(@list.find_max).must_equal 100
+            @list.add_first(50)
             expect(@list.find_min).must_equal(-12)
         end
     end
