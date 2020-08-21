@@ -186,7 +186,7 @@ describe LinkedList do
             expect(@list.find_max).must_equal 9
             expect(@list.find_min).must_equal 3
 
-            # delete fist node (requires updating head)
+            # delete middle node (requires updating head)
             @list.delete(4)
             expect(@list.get_first).must_equal 3
             expect(@list.length).must_equal 2
