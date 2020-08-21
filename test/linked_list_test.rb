@@ -27,7 +27,7 @@ describe LinkedList do
             @list.add_first(3)
 
             # Assert
-            expect(@list.get_first).must_equal 3
+            expect(@list.get_at_index(0)).must_equal 3
         end
 
         it 'will put the last added item to the front of the list' do
@@ -36,18 +36,18 @@ describe LinkedList do
             @list.add_first(2)
 
             # Assert
-            expect(@list.get_first).must_equal 2
+            expect(@list.get_at_index(0)).must_equal 2
 
             # Act again
             @list.add_first(3)
 
             # Assert
-            expect(@list.get_first).must_equal 3
+            expect(@list.get_at_index(0)).must_equal 3
         end
 
         it 'will return `nil` for `getFirst` if the list is empty' do
 
-            expect(@list.get_first).must_be_nil
+            expect(@list.get_at_index(0)).must_be_nil
         end
     end
 
@@ -89,29 +89,6 @@ describe LinkedList do
         end
     end
 
-    describe "addLast & getLast" do
-        it "will add to the front if the list is empty" do
-            @list.add_last(1)
-            expect(@list.get_first).must_equal 1
-        end
-
-        it "will put new items to the rear of the list" do
-            @list.add_last(2)
-            expect(@list.length).must_equal 1
-            expect(@list.get_last).must_equal 2
-
-            @list.add_last(3)
-            expect(@list.get_first).must_equal 2
-            expect(@list.get_last).must_equal 3
-            expect(@list.length).must_equal 2
-
-            @list.add_last(4)
-            expect(@list.get_first).must_equal 2
-            expect(@list.get_last).must_equal 4
-            expect(@list.length).must_equal 3
-        end
-    end
-
     describe 'get_at_index' do
         it 'returns nil if the index is outside the bounds of the list' do
             expect(@list.get_at_index(3)).must_be_nil
@@ -130,6 +107,29 @@ describe LinkedList do
         end
     end
 
+    xdescribe "Optional addLast & getLast" do
+        it "will add to the front if the list is empty" do
+            @list.add_last(1)
+            expect(@list.get_at_index(0)).must_equal 1
+        end
+
+        it "will put new items to the rear of the list" do
+            @list.add_last(2)
+            expect(@list.length).must_equal 1
+            expect(@list.get_last).must_equal 2
+
+            @list.add_last(3)
+            expect(@list.get_at_index(0)).must_equal 2
+            expect(@list.get_last).must_equal 3
+            expect(@list.length).must_equal 2
+
+            @list.add_last(4)
+            expect(@list.get_at_index(0)).must_equal 2
+            expect(@list.get_last).must_equal 4
+            expect(@list.length).must_equal 3
+        end
+    end
+
     describe 'max and min values' do
         it 'returns nil if the list is empty' do
             expect(@list.find_max()).must_be_nil
@@ -145,7 +145,7 @@ describe LinkedList do
                 count += 1
             end
 
-            @list.add_last(100)
+            @list.add_first(100)
             @list.add_first(-12)
             expect(@list.find_max).must_equal 100
             expect(@list.find_min).must_equal(-12)
@@ -160,8 +160,8 @@ describe LinkedList do
         end
 
         it "can delete valid values from list" do
-            @list.add_last(9)
-            @list.add_last(10)
+            @list.add_first(9)
+            @list.add_first(10)
             @list.add_first(4)
             @list.add_first(3)
             @list.add_first(2)
@@ -170,29 +170,29 @@ describe LinkedList do
             @list.delete(2)
             expect(@list.get_first).must_equal 3
             expect(@list.length).must_equal 4
-            expect(@list.get_last).must_equal 10
+            expect(@list.get_at_index(@list.length - 1)).must_equal 9
             expect(@list.find_max).must_equal 10
             expect(@list.find_min).must_equal 3
 
             # delete last node
             @list.delete(10)
-            expect(@list.get_first).must_equal 3
+            expect(@list.get_at_index(0)).must_equal 3
             expect(@list.length).must_equal 3
-            expect(@list.get_last).must_equal 9
+            expect(@list.get_at_index(@list.length - 1)).must_equal 9
             expect(@list.find_max).must_equal 9
             expect(@list.find_min).must_equal 3
 
-            # delete fist node (requires updating head)
+            # delete first node (requires updating head)
             @list.delete(4)
-            expect(@list.get_first).must_equal 3
+            expect(@list.get_at_index(0)).must_equal 3
             expect(@list.length).must_equal 2
-            expect(@list.get_last).must_equal 9
+            expect(@list.get_at_index(@list.length - 1)).must_equal 9
             expect(@list.find_max).must_equal 9
             expect(@list.find_min).must_equal 3
         end
     end
 
-    describe "nth_from_the_end" do
+    xdescribe "Optional:  nth_from_the_end" do
         it 'returns nil if n is outside the bounds of the list' do
             expect(@list.find_nth_from_end(3)).must_be_nil
         end
@@ -219,10 +219,10 @@ describe LinkedList do
             @list.add_first(1)
             @list.reverse
 
-            expect(@list.find_nth_from_end(0)).must_equal 1
-            expect(@list.find_nth_from_end(1)).must_equal 2
-            expect(@list.find_nth_from_end(2)).must_equal 3
-            expect(@list.find_nth_from_end(3)).must_equal 4
+            expect(@list.get_at_index(0)).must_equal 4
+            expect(@list.get_at_index(1)).must_equal 3
+            expect(@list.get_at_index(2)).must_equal 2
+            expect(@list.get_at_index(3)).must_equal 1
         end
     end
 end
