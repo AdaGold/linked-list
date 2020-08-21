@@ -47,6 +47,22 @@ class LinkedList
     end
 
 
+    # Additional Exercises 
+    # returns the value in the first node
+    # returns nil if the list is empty
+    # Time Complexity: ?
+    # Space Complexity: ?
+    def get_first
+      raise NotImplementedError
+    end
+
+    # method that inserts a given value as a new last node in the linked list
+    # Time Complexity: ?
+    # Space Complexity: ?
+    def add_last(value)
+      raise NotImplementedError
+    end
+
     # method that returns the length of the singly linked list
     # Time Complexity: ?
     # Space Complexity: ?
@@ -85,7 +101,14 @@ class LinkedList
       raise NotImplementedError
     end
 
-
+    # method that returns the value of the last node in the linked list
+    # returns nil if the linked list is empty
+    # Time Complexity: ?
+    # Space Complexity: ?
+    def get_last
+      raise NotImplementedError
+    end
+  
     ## Advanced Exercises
     # returns the value at the middle element in the singly linked list
     # Time Complexity: ?
@@ -108,31 +131,6 @@ class LinkedList
     # Time Complexity: ?
     # Space Complexity: ?
     def has_cycle
-      raise NotImplementedError
-    end
-
-
-    # Additional Exercises 
-    # returns the value in the first node
-    # returns nil if the list is empty
-    # Time Complexity: ?
-    # Space Complexity: ?
-    def get_first
-      raise NotImplementedError
-    end
-
-    # method that inserts a given value as a new last node in the linked list
-    # Time Complexity: ?
-    # Space Complexity: ?
-    def add_last(value)
-      raise NotImplementedError
-    end
-
-    # method that returns the value of the last node in the linked list
-    # returns nil if the linked list is empty
-    # Time Complexity: ?
-    # Space Complexity: ?
-    def get_last
       raise NotImplementedError
     end
 
