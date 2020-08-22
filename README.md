@@ -8,11 +8,4 @@ Design and implement the classes and the methods. Implement the methods within t
 
 ### Going Further
 
-Create a new class called `DoublyLinkedList` which implements a doubly linked list.  Then implement the following methods:  
-
-- `add_first`
-- `add_last`
-- `get_first`
-- `get_at_index(index)`
-- `reverse`
-- `delete(value)`
+There are a set of advanced methods you can choose to implement for additional practice.
