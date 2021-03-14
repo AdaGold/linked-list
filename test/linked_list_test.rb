@@ -204,7 +204,7 @@ describe LinkedList do
             @list.add_first(2)
 
             # Act
-            @delete(9)
+            @list.delete(9)
 
             # Assert
             expect(@list.get_last).must_equal 10
