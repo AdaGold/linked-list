@@ -14,7 +14,7 @@ ARG SUBMISSION_SUBFOLDER
 ADD $SUBMISSION_SUBFOLDER /app
 
 
-COPY ./Gemfile* .
+COPY ./Gemfile .
 RUN gem install bundler
 RUN bundle install
 
