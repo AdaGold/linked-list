@@ -1,25 +1,35 @@
-# Starting from a minimalist image
-FROM ruby:2.7
-# Reference for help contact me
-LABEL maintainer="chris@adadev.org"
+# Install latest version of node
+FROM continuumio/anaconda3:latest
 
-# Create a directory for the app
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    ca-certificates \
+    curl \
+    sudo \
+    openssl \
+    libssl-dev libffi-dev \
+    --no-install-recommends
+
+# Create directory for app
 RUN mkdir /app
 
-# Set the working directory for RUN, ADD and COPY
+# Set as current directory for RUN, ADD, COPY commands
 WORKDIR /app
 
-# Add entire student fork (overwrites previously added files)
+# Add to PATH
+ENV PATH /app:$PATH
+
+# Add requirements.txt from upstream
+ADD requirements.txt /app
+RUN pip install -r /app/requirements.txt
+
+# Add entire student fork (overwrites previously added package.json)
 ARG SUBMISSION_SUBFOLDER
 ADD $SUBMISSION_SUBFOLDER /app
 
-
-COPY ./Gemfile* .
-RUN gem install bundler
-RUN bundle install
-
-# Overwrite the script and test files
+# Overwrite files in student fork with upstream files
 ADD test.sh /app
-ADD test /app
+ADD tests /app/tests
 
-RUN chmod +x test.sh
+# User defined requirements
+# RUN make init
