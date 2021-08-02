@@ -2,14 +2,22 @@
 # Defines a node in the singly linked list
 class Node:
 
-    def initialize(self, value, next_node = None):
-        self.data = value
+    def __init__(self, value, next_node = None):
+        self.value = value
         self.next = next_node
 
 # Defines the singly linked list
 class LinkedList:
     def initialize(self):
       self.head = None # keep the head private. Not accessible outside this class
+
+    # returns the value in the first node
+    # returns nil if the list is empty
+    # Time Complexity: ?
+    # Space Complexity: ?
+    def get_first(self):
+        pass
+
 
     # method to add a new node with the specific data value in the linked list
     # insert the new node at the beginning of the linked list
@@ -23,33 +31,6 @@ class LinkedList:
     # Time Complexity: ?
     # Space Complexity: ?
     def search(self, value):
-        pass
-
-    # method to return the max value in the linked list
-    # returns the data value and not the node
-    def find_max(self):
-        pass
-
-    # method to return the min value in the linked list
-    # returns the data value and not the node
-    # Time Complexity: ?
-    # Space Complexity: ?
-    def find_min(self):
-        pass
-
-
-    # Additional Exercises 
-    # returns the value in the first node
-    # returns nil if the list is empty
-    # Time Complexity: ?
-    # Space Complexity: ?
-    def get_first(self):
-        pass
-
-    # method that inserts a given value as a new last node in the linked list
-    # Time Complexity: ?
-    # Space Complexity: ?
-    def add_last(self, value):
         pass
 
     # method that returns the length of the singly linked list
@@ -66,10 +47,22 @@ class LinkedList:
     def get_at_index(self, index):
         pass
 
-    # method to print all the values in the linked list
+    # method that returns the value of the last node in the linked list
+    # returns nil if the linked list is empty
     # Time Complexity: ?
     # Space Complexity: ?
-    def visit(self):
+    def get_last(self):
+        pass
+
+    # method that inserts a given value as a new last node in the linked list
+    # Time Complexity: ?
+    # Space Complexity: ?
+    def add_last(self, value):
+        pass
+
+    # method to return the max value in the linked list
+    # returns the data value and not the node
+    def find_max(self):
         pass
 
     # method to delete the first node found with specified value
@@ -78,18 +71,24 @@ class LinkedList:
     def delete(self, value):
         pass
 
+    # method to print all the values in the linked list
+    # Time Complexity: ?
+    # Space Complexity: ?
+    def visit(self):
+        helper_list = []
+        current = self.head
+
+        while current:
+            helper_list.append(str(current.value))
+            current = current.next
+        
+        print(", ".join(helper_list))
+
     # method to reverse the singly linked list
     # note: the nodes should be moved and not just the values in the nodes
     # Time Complexity: ?
     # Space Complexity: ?
     def reverse(self):
-        pass
-
-    # method that returns the value of the last node in the linked list
-    # returns nil if the linked list is empty
-    # Time Complexity: ?
-    # Space Complexity: ?
-    def get_last(self):
         pass
   
     ## Advanced/ Exercises
