@@ -2,6 +2,26 @@
 
 Using object oriented design constructs, define a Node class and LinkedList class for a singly linked list. Each node has integer data value and a link to the next node. The linked list class has a head node and the following methods defined.
 
+## Getting Started
+
+As usual with a python project, create a virtual environment:
+
+```
+python -m venv venv
+```
+
+Then activate the virtual environment
+
+```
+source venv/bin/activate
+```
+
+Then install the required packages.
+
+```
+pip install -r requirements.txt
+```
+
 ## Exercise
 
 Design and implement the classes and the methods. Implement the methods within the Linked List class that are currently only contain `pass`.
