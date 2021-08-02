@@ -10,7 +10,6 @@ def list() -> LinkedList:
 def test_list_can_be_initialized(list):
     assert isinstance(list, LinkedList)
 
-
 def test_get_first_returns_none_for_empty_list(list):
     assert list.get_first() == None
 
