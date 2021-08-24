@@ -12,7 +12,7 @@ class LinkedList:
       self.head = None # keep the head private. Not accessible outside this class
 
     # returns the value in the first node
-    # returns nil if the list is empty
+    # returns None if the list is empty
     # Time Complexity: ?
     # Space Complexity: ?
     def get_first(self):
@@ -41,14 +41,14 @@ class LinkedList:
 
     # method that returns the value at a given index in the linked list
     # index count starts at 0
-    # returns nil if there are fewer nodes in the linked list than the index value
+    # returns None if there are fewer nodes in the linked list than the index value
     # Time Complexity: ?
     # Space Complexity: ?
     def get_at_index(self, index):
         pass
 
     # method that returns the value of the last node in the linked list
-    # returns nil if the linked list is empty
+    # returns None if the linked list is empty
     # Time Complexity: ?
     # Space Complexity: ?
     def get_last(self):
@@ -111,13 +111,6 @@ class LinkedList:
     # Time Complexity: ?
     # Space Complexity: ?
     def has_cycle(self):
-        pass
-
-    # method to insert a new node with specific data value, assuming the linked
-    # list is sorted in ascending order
-    # Time Complexity: ?
-    # Space Complexity: ?
-    def insert_ascending(self, value):
         pass
 
     # Helper method for tests
