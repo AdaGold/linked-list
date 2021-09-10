@@ -8,7 +8,7 @@ class Node:
 
 # Defines the singly linked list
 class LinkedList:
-    def initialize(self):
+    def __init__(self):
       self.head = None # keep the head private. Not accessible outside this class
 
     # returns the value in the first node
