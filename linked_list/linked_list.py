@@ -123,7 +123,7 @@ class LinkedList:
             current.next = new_node
             self.tail = new_node
             self.size += 1
-
+# testing? 
     # method to return the max value in the linked list
     # returns the data value and not the node
     def find_max(self):
