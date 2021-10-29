@@ -192,12 +192,11 @@ def test_reverse_will_reverse_five_element_list(list):
     for i in range(0, 5):
         list.add_first(i)
     
-    list.reverse()
+    list.reverse() 
     
     for i in range(0, 5):
         assert list.get_at_index(i) == i
 
-@pytest.mark.skip(reason="Going Further methods")
 def test_find_middle_value_returns_middle_element_of_five_element_list(list):
     list.add_first(10)
     list.add_first(30)
@@ -206,7 +205,6 @@ def test_find_middle_value_returns_middle_element_of_five_element_list(list):
     list.add_first(20)
     assert list.find_middle_value() == 50
 
-@pytest.mark.skip(reason="Going Further methods")
 def test_find_middle_value_returns_element_at_index_two_of_six_element_list(list):
     list.add_first(10)
     list.add_first(30)
@@ -216,11 +214,9 @@ def test_find_middle_value_returns_element_at_index_two_of_six_element_list(list
     list.add_first(100)
     assert list.find_middle_value() == 60
 
-@pytest.mark.skip(reason="Going Further methods")
 def test_nth_from_n_when_list_is_empty(list):
     assert list.find_nth_from_end(3) == None
 
-@pytest.mark.skip(reason="Going Further methods")
 def test_find_nth_from_n_when_length_less_than_n(list):
     list.add_first(5)
     list.add_first(4)
@@ -230,7 +226,6 @@ def test_find_nth_from_n_when_length_less_than_n(list):
 
     assert list.find_nth_from_end(6) == None
 
-@pytest.mark.skip(reason="Going Further methods")
 def test_find_nth_from_n(list):
     list.add_first(1)
     list.add_first(2)
@@ -243,7 +238,6 @@ def test_find_nth_from_n(list):
     assert list.find_nth_from_end(3) ==  4
     assert list.find_nth_from_end(4) ==  None
 
-@pytest.mark.skip(reason="Going Further methods")
 def test_has_cycle(list):
     assert list.has_cycle() == False
 
