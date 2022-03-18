@@ -152,17 +152,19 @@ class LinkedList:
   
     ## Advanced/ Exercises
     # returns the value at the middle element in the singly linked list
-    # Time Complexity: ?
-    # Space Complexity: ?
+    # Time Complexity: O(n)
+    # Space Complexity: O(1)
     def find_middle_value(self):
-        pass
+        middle = self.length() // 2
+        return self.get_at_index(middle)
 
     # find the nth node from the end and return its value
     # assume indexing starts at 0 while counting to n
-    # Time Complexity: ?
-    # Space Complexity: ?
+    # Time Complexity: O(n)
+    # Space Complexity: O(1)
     def find_nth_from_end(self, n):
-        pass
+        index = self.length() - n - 1
+        return self.get_at_index(index)
 
     # checks if the linked list has a cycle. A cycle exists if any node in the
     # linked list links to a node already visited.
