@@ -53,7 +53,13 @@ class LinkedList:
     # Time Complexity: ?
     # Space Complexity: ?
     def length(self):
-        pass
+        count = 0
+        current = self.head
+
+        while current != None:
+            count +=1
+            current = current.next
+        return count
 
     # method that returns the value at a given index in the linked list
     # index count starts at 0
@@ -61,7 +67,15 @@ class LinkedList:
     # Time Complexity: ?
     # Space Complexity: ?
     def get_at_index(self, index):
-        pass
+        count = 0
+        current = self.head
+
+        while current != None:
+            if count == index:
+                return current.value
+            count+=1
+            current = current.next
+        return None
 
     # method that returns the value of the last node in the linked list
     # returns None if the linked list is empty
@@ -95,13 +109,33 @@ class LinkedList:
     # method to return the max value in the linked list
     # returns the data value and not the node
     def find_max(self):
-        pass
+        max_value = 0
+        current = self.head
+
+        if self.head == None:
+            return None
+
+        while current != None:
+            if current.value > max_value:
+                max_value = current.value
+            current = current.next
+        return max_value
 
     # method to delete the first node found with specified value
     # Time Complexity: ?
     # Space Complexity: ?
     def delete(self, value):
         pass
+        
+            
+
+
+
+
+
+
+                
+
 
     # method to print all the values in the linked list
     # Time Complexity: ?
