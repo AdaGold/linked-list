@@ -49,6 +49,7 @@ class LinkedList:
 
         return False
 
+
     # method that returns the length of the singly linked list
     # Time Complexity: ?
     # Space Complexity: ?
@@ -60,6 +61,7 @@ class LinkedList:
             count +=1
             current = current.next
         return count
+
 
     # method that returns the value at a given index in the linked list
     # index count starts at 0
@@ -76,6 +78,7 @@ class LinkedList:
             count+=1
             current = current.next
         return None
+
 
     # method that returns the value of the last node in the linked list
     # returns None if the linked list is empty
@@ -121,20 +124,30 @@ class LinkedList:
             current = current.next
         return max_value
 
+
     # method to delete the first node found with specified value
     # Time Complexity: ?
     # Space Complexity: ?
     def delete(self, value):
-        pass
+
+        current = self.head
+
+        # removing first node
+        # self.head = self.head.next
+        if current != None and current.value == value:
+            self.head = current.next
+            return
         
-            
+        while current != None and current.value != value:
+            previous = current # previous = self.head
+            current = current.next # self.head = self.head.next
 
+        if current == None:
+            return
+        
+        # self.head.next = self.head.next.next
+        previous.next = current.next 
 
-
-
-
-
-                
 
 
     # method to print all the values in the linked list
@@ -155,21 +168,51 @@ class LinkedList:
     # Time Complexity: ?
     # Space Complexity: ?
     def reverse(self):
-        pass
+        previous = None
+        current = self.head
+        next = current.next
+
+        while current:
+            current.next = previous # reverses direction of pointer
+            previous = current # previous value continues to stack before current
+            current = next # iterates until end of list
+
+            if next:
+                next = next.next
+        self.head = previous # last previous value is the head of the list now
+    
 
     ## Advanced/ Exercises
     # returns the value at the middle element in the singly linked list
     # Time Complexity: ?
     # Space Complexity: ?
     def find_middle_value(self):
-        pass
+        p1 = self.head # first pointer
+        p2 = self.head # second pointera
+
+        # once we hit p1.next.next (end of list)
+        # p2 should be at the position of the value in the middle of the list
+        # p1 is 2x faster than p2
+        while p1.next != None and p1.next.next != None:
+            p1 = p1.next.next
+            p2 = p2.next
+
+        return p2.value
 
     # find the nth node from the end and return its value
     # assume indexing starts at 0 while counting to n
     # Time Complexity: ?
     # Space Complexity: ?
     def find_nth_from_end(self, n):
-        pass
+        count = 0
+        current = self.head
+
+        while current != None:
+            if count == n:
+                return current.value
+            count+=1
+            current = current.next
+        return None
 
     # checks if the linked list has a cycle. A cycle exists if any node in the
     # linked list links to a node already visited.
