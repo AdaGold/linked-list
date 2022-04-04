@@ -7,7 +7,7 @@ Using object oriented design constructs, define a Node class and LinkedList clas
 As usual with a python project, create a virtual environment:
 
 ```
-python -m venv venv
+python3 -m venv venv
 ```
 
 Then activate the virtual environment
