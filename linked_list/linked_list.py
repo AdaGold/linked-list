@@ -202,9 +202,9 @@ class LinkedList:
             temp = p2.next
             p2.next = p1  # p2 now points at the previous node
             p1 = p2  # advance p1 to the next node (in the old ordering)
-            if not temp:  # if we're about to walk off the list, this is the new head
-                self.head = p2
             p2 = temp
+
+        self.head = p1
 
     ## Advanced/ Exercises
     # returns the value at the middle element in the singly linked list
