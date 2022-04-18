@@ -13,18 +13,22 @@ class LinkedList:
 
     # returns the value in the first node
     # returns None if the list is empty
-    # Time Complexity: ?
-    # Space Complexity: ?
+    # Time Complexity: O(1)
+    # Space Complexity: O(1)
     def get_first(self):
-        pass
-
+        if self.head is None:
+            return None
+        else: 
+            return self.head
 
     # method to add a new node with the specific data value in the linked list
     # insert the new node at the beginning of the linked list
     # Time Complexity: ?
     # Space Complexity: ?
     def add_first(self, value):
-        pass
+        new_node = Node(value)
+        new_node.next = self.head
+        self.head = new_node
 
     # method to find if the linked list contains a node with specified value
     # returns true if found, false otherwise
