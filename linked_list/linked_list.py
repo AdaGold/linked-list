@@ -35,13 +35,17 @@ class LinkedList:
     # Time Complexity: ?
     # Space Complexity: ?
     def search(self, value):
+        
+        # Initialize current to head
         current_node = self.head
-        while current_node is not None:
+ 
+        # loop till current not equal to None
+        while current_node != None:
             if current_node == value:
-                return True
-            current_node.next = self.next
-            self.next = current_node.value
-        return False
+                return True # data found
+            current_node = current_node.next
+            
+        return False # Data Not found
 
     # method that returns the length of the singly linked list
     # Time Complexity: ?
