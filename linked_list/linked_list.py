@@ -78,7 +78,21 @@ class LinkedList:
     # Time Complexity: ?
     # Space Complexity: ?
     def get_last(self):
-        pass
+        current_node = self.head
+
+        if current_node is None:
+            return None
+        
+        # What do I want the while loop to do?
+            # I want to keep the while loop going until I reach the last node
+            # When the last node is reached, I want to return the value 
+        while True:
+            if current_node.next is None:
+                return current_node.value
+            else:
+                current_node = current_node.next
+
+        
 
     # method that inserts a given value as a new last node in the linked list
     # Time Complexity: ?
