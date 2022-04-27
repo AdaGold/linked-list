@@ -35,7 +35,6 @@ class LinkedList:
     # Space Complexity: O(1)
     def search(self, value):
         current_node = self.head
-        print(current_node)
         while current_node is not None:
             if current_node.value == value:
                 return True
