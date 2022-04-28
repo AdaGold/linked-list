@@ -132,10 +132,32 @@ class LinkedList:
         return max_value
 
     # method to delete the first node found with specified value
-    # Time Complexity: ?
-    # Space Complexity: ?
+    # Time Complexity: O(n)
+    # Space Complexity: O(1)
     def delete(self, value):
-        pass
+        current_node = self.head
+        previous_node = None
+
+        if current_node is None:
+            return None
+
+        # Case: value to be deleted is the first value in the linked list
+        if current_node.value == value:
+            self.head = current_node.next
+            current_node = None
+        
+        # Case: value to be deleted is the last value in the linked list
+            # traverse linked list to find the last node
+            # compare speficied value to last node's value
+            # if the values match, re-assign the penultimate node reference to None
+        while current_node is not None and current_node.value != value:
+            previous_node = current_node
+            current_node = current_node.next
+        
+        previous_node.next = current_node.next
+        current_node = None
+            
+            
 
     # method to print all the values in the linked list
     # Time Complexity: ?
