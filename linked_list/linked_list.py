@@ -104,11 +104,10 @@ class LinkedList:
 
         # What do I want while loop to do? I want while loop to find the last node 
 
-        # while current_node is not None:
-            # current_node = current_node.next 
-
-        while current_node.next:
-            current_node = current_node.next
+        while current_node is not None:
+            if current_node.next is None:
+                break
+            current_node = current_node.next 
 
         # When last node is found, I want to append new_node to it.
         current_node.next = new_node
