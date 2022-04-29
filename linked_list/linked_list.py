@@ -160,8 +160,8 @@ class LinkedList:
             
 
     # method to print all the values in the linked list
-    # Time Complexity: ?
-    # Space Complexity: ?
+    # Time Complexity: O(n)
+    # Space Complexity: O(n)
     def visit(self):
         helper_list = []
         current = self.head
@@ -177,8 +177,38 @@ class LinkedList:
     # Time Complexity: ?
     # Space Complexity: ?
     def reverse(self):
-        pass
-  
+
+        # Put nodes in a list
+        # Reverse the list
+        # Create a new linked list from the reversed list
+        
+        current_node = self.head
+        nodes_list = []
+        nodes_list_reverse = []
+
+        while current_node is not None:
+            nodes_list.append(current_node)
+            current_node = current_node.next
+
+        i = len(nodes_list)-1
+
+        while i > 0:
+            nodes_list_reverse.append(nodes_list[i])
+            i -= 1
+        nodes_list_reverse.append(nodes_list[0])
+
+        for i in range(0, len(nodes_list_reverse)):
+            if i == 0:
+                current_node = nodes_list_reverse[i]
+                self.head = current_node
+            else:
+                current_node = nodes_list_reverse[i]
+
+            if i < len(nodes_list_reverse)-1:
+                current_node.next = nodes_list_reverse[i+1]
+            
+        current_node.next = None
+
     ## Advanced/ Exercises
     # returns the value at the middle element in the singly linked list
     # Time Complexity: ?
