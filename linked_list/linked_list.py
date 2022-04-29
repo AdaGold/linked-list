@@ -145,6 +145,7 @@ class LinkedList:
         if current_node.value == value:
             self.head = current_node.next
             current_node = None
+            return
         
         # Case: value to be deleted is the last value in the linked list
             # traverse linked list to find the last node
@@ -174,8 +175,8 @@ class LinkedList:
 
     # method to reverse the singly linked list
     # note: the nodes should be moved and not just the values in the nodes
-    # Time Complexity: ?
-    # Space Complexity: ?
+    # Time Complexity: O(n)
+    # Space Complexity: O(n)
     def reverse(self):
 
         # Put nodes in a list
